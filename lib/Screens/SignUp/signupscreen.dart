@@ -50,7 +50,7 @@ class _Signupscreen extends State<Signupscreen> {
                   emailController.text.toString(),
                   passwordController.text.toString(),
                   confirmController.text.toString());
-              Navigator.push(context,
+              Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (context) => Signinscreen()));
             }, "Sign up"),
             SizedBox(height: 30),
@@ -77,15 +77,16 @@ class _Signupscreen extends State<Signupscreen> {
   }
 
   signup(String user, String email, String password, String confirm) async {
-    if (user.isEmpty || email.isEmpty || password.isEmpty || confirm.isEmpty) {
-      return UiHelper.CustomAlertBox(context, "Enter Required Fields");
-    } else {
-      if (password == confirm) {
+    if (user.isEmpty || email.isEmpty || password.isEmpty || confirm.isEmpty||password==confirm)
+      {
+        // return UiHelper.CustomAlertBox(context, "Enter Required Field's");
         log("Data Added");
         return "Password match";
-      } else {
+      }
+      else
+      {
         return "The Passwords Don't Match";
       }
     }
-  }
 }
+

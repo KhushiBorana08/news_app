@@ -64,7 +64,7 @@ class _Signinscreen extends State<Signinscreen> {
                 Text("Don't have an account?",
                   style: TextStyle(fontSize: 15, color: Colors.black),),
                 TextButton(onPressed: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Signupscreen()));
+                  Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>Signupscreen()));
                 }, child: Text("Sign Up"),
                   style: TextButton.styleFrom(foregroundColor: Color(0xFF0D47A1),
                       textStyle: TextStyle(
@@ -85,7 +85,7 @@ class _Signinscreen extends State<Signinscreen> {
     else {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       prefs.setBool("isSignup", true);
-      Navigator.push(context,MaterialPageRoute(builder: (context)=>Homescreen()));
+      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>Homescreen()));
       log("Data Added");
     }
   }
