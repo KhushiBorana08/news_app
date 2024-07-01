@@ -30,7 +30,7 @@ class splashState extends State<splash> {
         }
       }
       else{
-        Navigator.push(context,MaterialPageRoute(builder: (context)=>Signupscreen()));
+        Navigator.push(context,MaterialPageRoute(builder: (context)=>Signinscreen()));
       }
       // Navigator.push(context, MaterialPageRoute(builder: (context) => Test4()));
       super.initState();

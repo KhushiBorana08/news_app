@@ -13,16 +13,28 @@ class _HomescreenState extends State<Homescreen> with SingleTickerProviderStateM
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-         backgroundColor: Colors.white,
+      drawer:  const Drawer(),
+        backgroundColor: Colors.white,
         //backgroundColor: Color(0xFF1A237E),
         appBar: AppBar(
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.search_outlined),
+              onPressed: () {
+                //showSearch(
+                    //context: context,
+                    //delegate: SearchField()
+                //);
+              },
+            )
+          ],
           backgroundColor: Colors.white,
           //backgroundColor: Color(0xFF1A237E),
           centerTitle: true,
           title: Text("Grand News", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
           ),
         ),
-        body: Column(children: [
+        body:  Column(children: [
           Row(
             children: [SizedBox(height: 25),
               Container(
@@ -54,37 +66,51 @@ class _HomescreenState extends State<Homescreen> with SingleTickerProviderStateM
                 height: 400,
                 width: 350,
                 decoration: BoxDecoration(
-                  image: DecorationImage(image: AssetImage('assets/images/news1.png'),fit: BoxFit.cover),
+                  image: DecorationImage(image: AssetImage('assets/images/news7.png'),fit: BoxFit.cover),
                   borderRadius: BorderRadius.circular(8),
                   //color: Colors.white70
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 30),
                   child: TextButton(onPressed: () {},
-                      child: Text("PM's 'Emergency' Jab At Congress As Parliament Meets, M Kharge's NEET Reply",
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,
-                            color: Colors.white, decoration: TextDecoration.underline),)),
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 330),
+                        child: Text("Indian cricket set for transition after T20 World Cup glory",
+                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,
+                              color: Colors.white)),
+                      )),
                 ),
-              )
+             // )
             ],
           ),SizedBox(height: 15),
-          Padding(padding: const EdgeInsets.symmetric(horizontal: 0),
-            child: Text("Latest News", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),),
-          SizedBox(height: 15),
-          Row(
+          // Padding(padding: const EdgeInsets.symmetric(horizontal: 0),
+          //   child: Text("Latest News", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),),
+          // SizedBox(height: 15),
+          Row(mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
-                height: 100,
+                child: Padding(padding: const EdgeInsets.symmetric(horizontal: 18),
+                  child: Text("Latest News", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),),
+              ),SizedBox(width: 130),
+              Container(
+                child: ElevatedButton(onPressed: () {}, child: Text("see more")),
+              )
+            ],
+          ),SizedBox(height: 10),
+          Row( mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 150,
                 width: 150,
                 decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage('assets/images/news4.png'),fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(8),
-                    color: Colors.black
+                     //color: Colors.white70
+                 ),
                 ),
-              ),
               Container(
                 height: 100,
                 width: 200,
-                child: TextButton(onPressed: () {}, child: Text("")),
+                child: TextButton(onPressed: () {},
+                    child: Text("Heavy rain likely over most parts of the country till Thursday", style: TextStyle(fontSize: 20, color: Colors.black),)),
               )
             ],
           )

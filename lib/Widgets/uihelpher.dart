@@ -52,4 +52,24 @@ class UiHelper{
       );
     });
   }
+
+  static Custompass(TextEditingController controller,String text,Color color,[String? params,bool? password,VoidCallback? callback]) {
+    return TextField(
+      controller:  controller,
+      obscureText: password!,
+      decoration: InputDecoration(
+        hintText: text,
+        suffixIcon: IconButton(
+        icon: Icon(password?Icons.visibility_off:Icons.visibility),
+        onPressed: callback,
+        ),
+        filled: true,
+        focusColor: Colors.black,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+        )
+        )
+      );
+  }
+
 }
