@@ -8,7 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class Signupscreen extends StatefulWidget {
   const Signupscreen({super.key});
   @override
-  State<Signupscreen> createState() =>_Signupscreen();
+  State<Signupscreen> createState() => _Signupscreen();
 }
 
 class _Signupscreen extends State<Signupscreen> {
@@ -16,7 +16,7 @@ class _Signupscreen extends State<Signupscreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmController = TextEditingController();
-
+  bool passwordVisible = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,27 +26,48 @@ class _Signupscreen extends State<Signupscreen> {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        child:
-        Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Sign up", style: TextStyle(fontSize: 40, color: Colors.black),),
+              "Sign up",
+              style: TextStyle(fontSize: 40, color: Colors.black),
+            ),
             SizedBox(height: 20),
-            Text("Create your account",
-              style: TextStyle(fontSize: 20, color: Colors.black),),
+            Text(
+              "Create your account",
+              style: TextStyle(fontSize: 20, color: Colors.black),
+            ),
             SizedBox(height: 30),
             UiHelper.CustomTextField(userController, "User Name", Icons.person),
             UiHelper.CustomTextField(
                 emailController, "Enter Email", Icons.mail),
-            UiHelper.CustomTextField(
-                passwordController, "Enter Password", Icons.visibility_off),
-            UiHelper.CustomTextField(
-                confirmController, "Confirm Password", Icons.visibility_off),
-
-            SizedBox(height: 30,),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+              child: UiHelper.Custompass(passwordController, "Enter Password",
+                  "password", passwordVisible, () {
+                setState(() {
+                  passwordVisible = !passwordVisible;
+                  log(passwordVisible.toString());
+                });
+              }),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+              child: UiHelper.Custompass(confirmController, "Confirm Password",
+                  "password", passwordVisible, () {
+                setState(() {
+                  passwordVisible = !passwordVisible;
+                  log(passwordVisible.toString());
+                });
+              }),
+            ),
+            SizedBox(
+              height: 30,
+            ),
             UiHelper.CustomButton(() {
-              signup(userController.text.toString(),
+              signup(
+                  userController.text.toString(),
                   emailController.text.toString(),
                   passwordController.text.toString(),
                   confirmController.text.toString());
@@ -57,36 +78,45 @@ class _Signupscreen extends State<Signupscreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Already have an account?",
-                  style: TextStyle(fontSize: 15, color: Colors.black),),
-                TextButton(onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Signinscreen()));
-                }, child: Text("Sign in"),
+                Text(
+                  "Already have an account?",
+                  style: TextStyle(fontSize: 15, color: Colors.black),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Signinscreen()));
+                  },
+                  child: Text("Sign in"),
                   style: TextButton.styleFrom(
                       foregroundColor: Color(0xFF0D47A1),
-                      textStyle: TextStyle(
-                          decoration: TextDecoration.underline)),
+                      textStyle:
+                          TextStyle(decoration: TextDecoration.underline)),
                 ),
               ],
             )
-          ],),
-
+          ],
+        ),
       ),
     );
   }
 
-  signup(String user, String email, String password, String confirm) async {
-    if (user.isEmpty || email.isEmpty || password.isEmpty || confirm.isEmpty||password==confirm)
-      {
-        // return UiHelper.CustomAlertBox(context, "Enter Required Field's");
-        log("Data Added");
-        return "Password match";
-      }
-      else
-      {
-        return "The Passwords Don't Match";
-      }
+  signup(String user, String email, String password, String confirm) {
+    if (user == "" || email == "" || password == "" || confirm == "") {
+      // log("inside");
+      return UiHelper.CustomAlertBox(context, "Enter Required Field's");
+    } else {
+      checkpassword(password, confirm);
     }
-}
+  }
 
+  checkpassword(String password, String confirm) {
+    if (password != confirm) {
+      return ("Password doesn't Match");
+    } else {
+      return ("user created");
+    }
+  }
+}

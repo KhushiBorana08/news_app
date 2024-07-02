@@ -18,7 +18,7 @@ class Signinscreen extends StatefulWidget {
 class _Signinscreen extends State<Signinscreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-
+  bool passwordVisible =false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,8 +40,14 @@ class _Signinscreen extends State<Signinscreen> {
             SizedBox(height: 30),
             UiHelper.CustomTextField(
                 emailController, "Enter Email", Icons.mail),
-            UiHelper.CustomTextField(
-                passwordController, "Enter Password", Icons.visibility_off),
+            Padding(padding: EdgeInsets.symmetric(horizontal: 25,vertical: 15),
+              child: UiHelper.Custompass(
+                passwordController, "Enter Password",  "password",passwordVisible,(){
+                setState(() {
+                  passwordVisible=!passwordVisible;
+                  log(passwordVisible.toString());
+                });
+              }),),
             SizedBox(height: 30,),
             UiHelper.CustomButton(() {
               signin(emailController.text.toString(),

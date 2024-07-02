@@ -47,7 +47,7 @@ class splashState extends State<splash> {
             Container(
               height: 300,
               width: 250,
-              child: Image.asset('assets/images/news-removebg-preview.png',fit:BoxFit.cover),
+              child: Image.asset('assets/images/k1.png',fit:BoxFit.cover),
             ),
           ],
         ),
