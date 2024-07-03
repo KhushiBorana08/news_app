@@ -17,15 +17,36 @@ class _HomescreenState extends State<Homescreen> with SingleTickerProviderStateM
       drawer: Drawer(
         child: ListView(
           children: [
-            DrawerHeader(decoration: BoxDecoration(
+            DrawerHeader(
+              decoration: BoxDecoration(
               color: Colors.grey,
             ),
             child: Column(
               children: [
-                ClipRect(child: Image.asset("assets/images/drawer-removebg-preview.png", height:135 ,),),
-
+                ClipRRect(child: Image.asset("assets/images/drawer-removebg-preview.png",
+                  height:80,
+                ),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                Text('\nPerson'),
               ],
-            ),)
+            ),),
+            Column(
+              children: [
+                ListTile(
+                  leading: Icon(Icons.account_circle_rounded),
+                  title: Text('Account'),
+                ),
+                ListTile(
+                  leading: Icon(Icons.favorite),
+                  title: Text('Favorites'),
+                ),
+                ListTile(
+                  leading: Icon(Icons.logout),
+                  title: Text('Log Out'),
+                ),
+              ],
+            )
           ],
         ),
       ),
