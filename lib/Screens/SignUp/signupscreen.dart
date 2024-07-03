@@ -71,8 +71,6 @@ class _Signupscreen extends State<Signupscreen> {
                   emailController.text.toString(),
                   passwordController.text.toString(),
                   confirmController.text.toString());
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => Signinscreen()));
             }, "Sign up"),
             SizedBox(height: 30),
             Row(
@@ -105,7 +103,6 @@ class _Signupscreen extends State<Signupscreen> {
 
   signup(String user, String email, String password, String confirm) {
     if (user == "" || email == "" || password == "" || confirm == "") {
-      // log("inside");
       return UiHelper.CustomAlertBox(context, "Enter Required Field's");
     } else {
       checkpassword(password, confirm);
@@ -114,9 +111,10 @@ class _Signupscreen extends State<Signupscreen> {
 
   checkpassword(String password, String confirm) {
     if (password != confirm) {
-      return ("Password doesn't Match");
+      return UiHelper.CustomAlertBox(context,"Password doesn't Match");
     } else {
-      return ("user created");
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => Signinscreen()));
     }
   }
 }

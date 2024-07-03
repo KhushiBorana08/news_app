@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 //import 'package:newsapp/uihelper.dart';
 
@@ -13,7 +14,21 @@ class _HomescreenState extends State<Homescreen> with SingleTickerProviderStateM
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer:  const Drawer(),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(decoration: BoxDecoration(
+              color: Colors.grey,
+            ),
+            child: Column(
+              children: [
+                ClipRect(child: Image.asset("assets/images/drawer-removebg-preview.png", height:135 ,),),
+
+              ],
+            ),)
+          ],
+        ),
+      ),
         backgroundColor: Colors.white,
         //backgroundColor: Color(0xFF1A237E),
         appBar: AppBar(
