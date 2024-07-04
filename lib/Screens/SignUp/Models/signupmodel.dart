@@ -1,50 +1,47 @@
-class SignInModel {
+class signupmodel {
   String? message;
-  User? user;
-  String? token;
+  Data? data;
 
-  SignInModel({this.message, this.user, this.token});
+  signupmodel({this.message, this.data});
 
-  SignInModel.fromJson(Map<String, dynamic> json) {
+  signupmodel.fromJson(Map<String, dynamic> json) {
     message = json['message'];
-    user = json['user'] != null ? new User.fromJson(json['user']) : null;
-    token = json['token'];
+    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['message'] = this.message;
-    if (this.user != null) {
-      data['user'] = this.user!.toJson();
+    if (this.data != null) {
+      data['data'] = this.data!.toJson();
     }
-    data['token'] = this.token;
     return data;
   }
 }
 
-class User {
-  String? sId;
+class Data {
   String? email;
   String? password;
   String? username;
+  String? sId;
   int? iV;
 
-  User({this.sId, this.email, this.password, this.username, this.iV});
+  Data({this.email, this.password, this.username, this.sId, this.iV});
 
-  User.fromJson(Map<String, dynamic> json) {
-    sId = json['_id'];
+  Data.fromJson(Map<String, dynamic> json) {
     email = json['email'];
     password = json['password'];
     username = json['username'];
+    sId = json['_id'];
     iV = json['__v'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['_id'] = this.sId;
     data['email'] = this.email;
     data['password'] = this.password;
     data['username'] = this.username;
+    data['_id'] = this.sId;
     data['__v'] = this.iV;
     return data;
   }

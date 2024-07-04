@@ -14,21 +14,42 @@ class _HomescreenState extends State<Homescreen> with SingleTickerProviderStateM
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            DrawerHeader(decoration: BoxDecoration(
-              color: Colors.grey,
-            ),
-            child: Column(
-              children: [
-                ClipRect(child: Image.asset("assets/images/drawer-removebg-preview.png", height:135 ,),),
-
-              ],
-            ),)
-          ],
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.grey,
+                ),
+                child: Column(
+                  children: [
+                    ClipRRect(child: Image.asset("assets/images/drawer-removebg-preview.png",
+                      height:80,
+                    ),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    Text('\nPerson'),
+                  ],
+                ),),
+              Column(
+                children: [
+                  ListTile(
+                    leading: Icon(Icons.account_circle_rounded),
+                    title: Text('Account'),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.favorite),
+                    title: Text('Favorites'),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.logout),
+                    title: Text('Log Out'),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
-      ),
         backgroundColor: Colors.white,
         //backgroundColor: Color(0xFF1A237E),
         appBar: AppBar(
@@ -37,8 +58,8 @@ class _HomescreenState extends State<Homescreen> with SingleTickerProviderStateM
               icon: const Icon(Icons.search_outlined),
               onPressed: () {
                 //showSearch(
-                    //context: context,
-                    //delegate: SearchField()
+                //context: context,
+                //delegate: SearchField()
                 //);
               },
             )
@@ -85,15 +106,15 @@ class _HomescreenState extends State<Homescreen> with SingleTickerProviderStateM
                   borderRadius: BorderRadius.circular(8),
                   //color: Colors.white70
                 ),
-                  child: TextButton(onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 330),
-                        child: Text("Indian cricket set for transition after T20 World Cup glory",
+                child: TextButton(onPressed: () {},
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 330),
+                      child: Text("Indian cricket set for transition after T20 World Cup glory",
                           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,
                               color: Colors.white)),
-                      )),
-                ),
-             // )
+                    )),
+              ),
+              // )
             ],
           ),SizedBox(height: 15),
           // Padding(padding: const EdgeInsets.symmetric(horizontal: 0),
@@ -116,11 +137,11 @@ class _HomescreenState extends State<Homescreen> with SingleTickerProviderStateM
                 height: 150,
                 width: 150,
                 decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage('assets/images/news4.png'),fit: BoxFit.cover),
-                    borderRadius: BorderRadius.circular(8),
-                     //color: Colors.white70
-                 ),
+                  image: DecorationImage(image: AssetImage('assets/images/news4.png'),fit: BoxFit.cover),
+                  borderRadius: BorderRadius.circular(8),
+                  //color: Colors.white70
                 ),
+              ),
               Container(
                 height: 100,
                 width: 200,

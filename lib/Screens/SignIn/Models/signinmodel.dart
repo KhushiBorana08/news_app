@@ -1,37 +1,39 @@
-class SignInModel {
+class signinmodel {
   String? message;
-  User? user;
+  Response? response;
   String? token;
 
-  SignInModel({this.message, this.user, this.token});
+  signinmodel({this.message, this.response, this.token});
 
-  SignInModel.fromJson(Map<String, dynamic> json) {
+  signinmodel.fromJson(Map<String, dynamic> json) {
     message = json['message'];
-    user = json['user'] != null ? new User.fromJson(json['user']) : null;
+    response = json['response'] != null
+        ? new Response.fromJson(json['response'])
+        : null;
     token = json['token'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['message'] = this.message;
-    if (this.user != null) {
-      data['user'] = this.user!.toJson();
+    if (this.response != null) {
+      data['response'] = this.response!.toJson();
     }
     data['token'] = this.token;
     return data;
   }
 }
 
-class User {
+class Response {
   String? sId;
   String? email;
   String? password;
   String? username;
   int? iV;
 
-  User({this.sId, this.email, this.password, this.username, this.iV});
+  Response({this.sId, this.email, this.password, this.username, this.iV});
 
-  User.fromJson(Map<String, dynamic> json) {
+  Response.fromJson(Map<String, dynamic> json) {
     sId = json['_id'];
     email = json['email'];
     password = json['password'];
