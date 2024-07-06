@@ -17,6 +17,7 @@ class splash extends StatefulWidget {
 class splashState extends State<splash> {
   @override
   void initState() {
+    super.initState();
     Timer(Duration(seconds: 3), () async {
       SharedPreferences prefs=await SharedPreferences.getInstance();
       bool? check=prefs.getBool("isSignup");
@@ -26,14 +27,14 @@ class splashState extends State<splash> {
               context, MaterialPageRoute(builder: (context) =>Homescreen()));
         }
         else{
-          Navigator.push(context,MaterialPageRoute(builder: (context)=>Signinscreen()));
+          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>Signinscreen()));
         }
       }
       else{
-        Navigator.push(context,MaterialPageRoute(builder: (context)=>Signupscreen()));
+        Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>Signupscreen()));
       }
       // Navigator.push(context, MaterialPageRoute(builder: (context) => Test4()));
-      super.initState();
+
     });
   }
   @override

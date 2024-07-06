@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:news_app/Screens/SignIn/signinscreen.dart';
 import 'package:news_app/Widgets/uihelpher.dart';
 
-import 'package:shared_preferences/shared_preferences.dart';
 
 class Signupscreen extends StatefulWidget {
-  const Signupscreen({super.key});
+const  Signupscreen({super.key});
   @override
   State<Signupscreen> createState() => _Signupscreen();
 }
@@ -17,6 +16,15 @@ class _Signupscreen extends State<Signupscreen> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmController = TextEditingController();
   bool passwordVisible = false;
+  //
+  // String? validateEmail(String? email){
+  //   RegExp emailRegex = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+  //   final isEmailValid=emailRegex.hasMatch(email ?? '');
+  //   if(!isEmailValid){
+  //     return'Please enter a valid email';
+  //   }
+  //   return null;
+  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,8 +48,7 @@ class _Signupscreen extends State<Signupscreen> {
             ),
             SizedBox(height: 30),
             UiHelper.CustomTextField(userController, "User Name", Icons.person),
-            UiHelper.CustomTextField(
-                emailController, "Enter Email", Icons.mail),
+            UiHelper.CustomTextField(emailController, "Enter Email", Icons.mail),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
               child: UiHelper.Custompass(passwordController, "Enter Password",

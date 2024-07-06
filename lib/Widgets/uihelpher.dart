@@ -12,22 +12,18 @@ class UiHelper{
             suffixIcon: Icon(icondata),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
-            )
+            ),
         ),
       ),
-
-
-
     );
   }
 
   static CustomButton(VoidCallback callback,String text){
-
     return SizedBox(
       height: 50,
       width: 330,
       child: ElevatedButton(onPressed: (){
-        callback();
+       callback();
       },style: ButtonStyle(
           backgroundColor: WidgetStateProperty.all<Color>(Color(0xFF0D47A1)),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
