@@ -5,30 +5,14 @@ class News1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(10),
             child:SingleChildScrollView(
               child: Column(
                children: [
-                //   Row(
-                  //   children: [
-                  //     InkWell(
-                  //       onTap: (){
-                  //         var Get;
-                  //         Get.back;
-                  //       },
-                  //       child: Container(
-                  //         child: const Row(
-                  //           children: [
-                  //             Icon(Icons.arrow_back_ios_new),
-                  //             Text("Back"),
-                    //       ],
-                      //    ),
-                        //),
-                     // ),
-                   // ],
-                  //), SizedBox(height: 20,),
                   Container(
                     child: Row(
                       children: [
@@ -55,5 +39,6 @@ class News1 extends StatelessWidget {
         ),
       ),
     );
+
   }
 }
