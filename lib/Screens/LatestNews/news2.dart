@@ -32,7 +32,7 @@ class News2 extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 20,),
-                Text("data",style: TextStyle(fontSize: 18,color: Theme.of(context).colorScheme.secondaryContainer),)
+                Text("The stampede at a 'satsang' killed 121 people as devotees suffocated to their deaths and bodies piled atop each other in the worst such tragedy in recent years. Envoys of several countries mourned the loss of lives in the incident.\n\nA deadly stampede during a 'satsang' in Uttar Pradesh's Hathras claimed the lives of 121 people on Tuesday. Scores of bodies were lying on blocks of ice inside a government hospital, as wailing relatives of the victims waited outside to take mortal remains back home. The victims were part of the crowd of thousands that had gathered near Phulrai village in the Sikandrarau area for the 'satsang' by religious preacher Bhole Baba.",style: TextStyle(fontSize: 18,color: Colors.black),)
               ],
             ),
           ),

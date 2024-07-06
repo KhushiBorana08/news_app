@@ -32,7 +32,7 @@ class News1 extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 20,),
-                  Text("data",style: TextStyle(fontSize: 18,color: Theme.of(context).colorScheme.secondaryContainer),)
+                  Text("Patna: Four of the five constituencies going to polls on Tuesday are likely to witness thunderstorm and lightning with gusty winds, as the Indian meteorological department (IMD) has issued ‘orange alert’ for north-east parts of Bihar for the next 48 hours. The constituencies that are likely to be affected are Madhepura, Jhanjharpur, Araria and Supaul.\n\nThe India Meteorological Department (IMD) has issued an orange alert for Karnataka, Maharashtra, Bihar, Assam, and Meghalaya, hinting at the possibility of heavy showers during the day. Uttar Pradesh is set to experience heatwaves during the day, the IMD indicated with a yellow alert.\n\nIn a press release dated June 20, the weather agency said that the Southwest monsoon has advanced into Maharashtra, Chhattisgarh, Odisha, West Bengal, and Bihar.\n",style: TextStyle(fontSize: 18,color: Colors.black),)
                 ],
             ),
           ),

@@ -16,7 +16,8 @@ class _FirstscreenState extends State<Firstscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+        appBar: AppBar(
+        ),
         body: Padding(
           padding: const EdgeInsets.all(10),
           //Padding(padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 70),),

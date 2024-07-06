@@ -52,14 +52,14 @@ class _ScreenoneState extends State<Screenone> {
                 }, child: Text("see more")),
               )
             ],
-          ),SizedBox(height: 10),
+          ),//SizedBox(height: 3),
           Row( mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 child: Row(
                   children: [
                     Container(
-                      height: 150,
+                      height: 130,
                       width: 150,
                       // color: Theme.of(context).colorScheme.background,
                       decoration: BoxDecoration(
@@ -69,7 +69,7 @@ class _ScreenoneState extends State<Screenone> {
                       ),
                     ),
                     Container(
-                      height: 170,
+                      height: 140,
                       width: 200,
                       child: TextButton(onPressed: () {
                         Navigator.push(context,MaterialPageRoute(builder: (context)=>News1()));

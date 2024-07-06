@@ -58,7 +58,7 @@ class _HomescreenState extends State<Homescreen> with SingleTickerProviderStateM
         appBar: AppBar(
           actions: [
             IconButton(
-              icon: const Icon(Icons.search_outlined),
+              icon: const Icon(Icons.notifications_active),
               onPressed: () {
                 //showSearch(
                 //context: context,
