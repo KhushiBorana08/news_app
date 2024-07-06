@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/Screens/LatestNews/latestnews.dart';
+import 'package:news_app/Screens/LatestNews/news1.dart';
 
 class Screenone extends StatefulWidget {
   const Screenone({super.key});
@@ -45,7 +47,9 @@ class _ScreenoneState extends State<Screenone> {
                   child: Text("Latest News", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),),
               ),SizedBox(width: 130),
               Container(
-                child: ElevatedButton(onPressed: () {}, child: Text("see more")),
+                child: ElevatedButton(onPressed: () {
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Firstscreen()));
+                }, child: Text("see more")),
               )
             ],
           ),SizedBox(height: 10),
@@ -67,7 +71,9 @@ class _ScreenoneState extends State<Screenone> {
                     Container(
                       height: 170,
                       width: 200,
-                      child: TextButton(onPressed: () {},
+                      child: TextButton(onPressed: () {
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>News1()));
+                      },
                           child: Text("Bihar Weather Update: Light Rain, Thandershower \nlikely in Nine Districts During Next 24 Hours; ", style: TextStyle(fontSize: 17, color: Colors.black),)),
                     )
 

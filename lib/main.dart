@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/Screens/Home/homescreen.dart';
 import 'package:news_app/Screens/LatestNews/latestnews.dart';
 import 'package:news_app/Screens/LatestNews/news1.dart';
+import 'package:news_app/Screens/Splash/Controllers/splashcontroller.dart';
 import 'package:news_app/Screens/Splash/splashscreen.dart';
 
 void main() {
@@ -35,7 +37,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       //home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home: Firstscreen(),
+      //home: Homescreen(),
+      home: splash(),
       debugShowCheckedModeBanner: false,
     );
   }

@@ -18,7 +18,7 @@ class splashState extends State<splash> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3), () async {
+    Timer(Duration(seconds: 1), () async {
       SharedPreferences prefs=await SharedPreferences.getInstance();
       bool? check=prefs.getBool("isSignup");
       if(check!=null){
@@ -46,9 +46,9 @@ class splashState extends State<splash> {
         child: Column(mainAxisAlignment: MainAxisAlignment.center,
           children:[
             Container(
-              height: 300,
+              height: 250,
               width: 250,
-              child: Image.asset('assets/images/k1.png',fit:BoxFit.cover),
+              child: Image.asset('assets/images/nlogo-removebg-preview.png',fit:BoxFit.cover),
             ),
           ],
         ),
