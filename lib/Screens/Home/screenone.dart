@@ -24,7 +24,6 @@ class _ScreenoneState extends State<Screenone> {
                 decoration: BoxDecoration(
                   image: DecorationImage(image: AssetImage('assets/images/news7.png'),fit: BoxFit.cover),
                   borderRadius: BorderRadius.circular(8),
-                  //color: Colors.white70
                 ),
                 child: TextButton(onPressed: () {},
                     child: Padding(
@@ -37,9 +36,6 @@ class _ScreenoneState extends State<Screenone> {
               // )
             ],
           ),SizedBox(height: 15),
-          // Padding(padding: const EdgeInsets.symmetric(horizontal: 0),
-          //   child: Text("Latest News", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),),
-          // SizedBox(height: 15),
           Row(mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
@@ -61,11 +57,9 @@ class _ScreenoneState extends State<Screenone> {
                     Container(
                       height: 130,
                       width: 150,
-                      // color: Theme.of(context).colorScheme.background,
                       decoration: BoxDecoration(
                         image: DecorationImage(image: AssetImage('assets/images/news4.png'),fit: BoxFit.cover),
                         borderRadius: BorderRadius.circular(20),
-                        //color: Colors.white70
                       ),
                     ),
                     Container(

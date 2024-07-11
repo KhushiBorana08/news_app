@@ -25,13 +25,13 @@ class _ScreentwoState extends State<Screentwo> {
               //)
             ],
           ),SizedBox(height: 20),
-          Row(mainAxisAlignment: MainAxisAlignment.center,
+          Row(mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
                 height: 300,
-                width: 350,
+                width: 371,
                 decoration: BoxDecoration(
-                    image: DecorationImage(image: AssetImage("assets/images/img.png"),fit: BoxFit.cover),
+                    image: DecorationImage(image: AssetImage("assets/images/img.png",),fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(10)
                 ),
               )

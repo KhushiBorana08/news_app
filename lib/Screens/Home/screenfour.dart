@@ -20,16 +20,14 @@ class _ScreenfourState extends State<Screenfour> {
                       Row(mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Flexible(
-                            //child: Padding(padding: const EdgeInsets.only(left: 20.0),
                             child: Text("MEA issues travel advisory for Israel, Iran over rising tensions", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),),
-                          //)
                         ],
                       ),SizedBox(height: 20),
-                      Row(mainAxisAlignment: MainAxisAlignment.center,
+                      Row(mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
                             height: 300,
-                            width: 350,
+                            width: 371,
                             decoration: BoxDecoration(
                                 image: DecorationImage(image: AssetImage("assets/images/travel.jpeg"),fit: BoxFit.cover),
                                 borderRadius: BorderRadius.circular(10)

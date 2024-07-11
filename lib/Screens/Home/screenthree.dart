@@ -25,11 +25,11 @@ class _ScreenthreeState extends State<Screenthree> {
                           //)
                         ],
                       ),SizedBox(height: 20),
-                      Row(mainAxisAlignment: MainAxisAlignment.center,
+                      Row(mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
                             height: 300,
-                            width: 350,
+                            width: 371,
                             decoration: BoxDecoration(
                                 image: DecorationImage(image: AssetImage("assets/images/news.jpg"),fit: BoxFit.cover),
                                 borderRadius: BorderRadius.circular(10)
@@ -46,21 +46,6 @@ class _ScreenthreeState extends State<Screenthree> {
                           //),
                         ],
                       )
-                      // Row(
-                      //   children: [
-                      //     Container(
-                      //       // child: Padding(padding: const EdgeInsets.only(left: 20.0),
-                      //       child: Text("Conservatives look headed for wipeout", style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),),
-                      //     //),
-                      //   ],
-                      // ),
-                      // SizedBox(height: 30),
-                      // Row(
-                      //   children: [
-                      //     Flexible(
-                      //       child: Text("The Conservative Party, also known as the Tories, has governed the U.K., with a series of different prime ministers, for 14 years. It often considers itself Britain’s “natural party of government.” That’s because the party has dominated politics and has led the government more frequently than any other party in the U.K. for the past century.\n\nBut polls show the Conservatives could lose more than two-thirds of the parliamentary seats they currently hold. It’s a dramatic shift from the last general election in 2019, when the Conservatives and then-leader Boris Johnson won by a huge margin promising to finish Britain's exit from the European Union.", textAlign: TextAlign.justify,),),
-                      //   ],
-                      // ),
                     ],
                   ),
                 )
