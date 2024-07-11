@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:news_app/Screens/LatestNews/latestnews.dart';
 import 'package:news_app/Screens/LatestNews/news1.dart';
 
@@ -10,74 +11,154 @@ class Screenone extends StatefulWidget {
 }
 
 class _ScreenoneState extends State<Screenone> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        children: [SizedBox(height: 10),
-          Row(mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                height: 400,
-                width: 350,
-                decoration: BoxDecoration(
-                  image: DecorationImage(image: AssetImage('assets/images/news7.png'),fit: BoxFit.cover),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: TextButton(onPressed: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 330),
-                      child: Text("Indian cricket set for transition after T20 World Cup glory",
-                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,
-                              color: Colors.white)),
-                    )),
-              ),
-              // )
-            ],
-          ),SizedBox(height: 15),
-          Row(mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Container(
-                child: Padding(padding: const EdgeInsets.symmetric(horizontal: 18),
-                  child: Text("Latest News", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),),
-              ),SizedBox(width: 130),
-              Container(
-                child: ElevatedButton(onPressed: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Firstscreen()));
-                }, child: Text("see more")),
-              )
-            ],
-          ),//SizedBox(height: 3),
-          Row( mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                child: Row(
-                  children: [
-                    Container(
-                      height: 130,
-                      width: 150,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(image: AssetImage('assets/images/news4.png'),fit: BoxFit.cover),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
-                    Container(
-                      height: 140,
-                      width: 200,
-                      child: TextButton(onPressed: () {
-                        Navigator.push(context,MaterialPageRoute(builder: (context)=>News1()));
-                      },
-                          child: Text("Bihar Weather Update: Light Rain, Thandershower \nlikely in Nine Districts During Next 24 Hours; ", style: TextStyle(fontSize: 17, color: Colors.black),)),
-                    )
+  List<Container> cards = [
+  Container(
+  height: 400,
+  alignment: Alignment.center,
+  decoration:BoxDecoration(
+  image: DecorationImage(image: AssetImage('assets/images/news7.png'),fit: BoxFit.cover),
+  borderRadius: BorderRadius.circular(8)
+  ),
+  child: TextButton(onPressed: () {},
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 300),
+                  child: Text("Indian cricket set for transition after T20 World Cup glory",
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,
+                          color: Colors.white)),
+                )),
+  ),
+  Container(
+  height: 400,
+  alignment: Alignment.center,
+  decoration:BoxDecoration(
+  image: DecorationImage(image: AssetImage('assets/images/pushpa.png'),fit: BoxFit.cover),
+  borderRadius: BorderRadius.circular(8)
+  ),
+    child: TextButton(onPressed: () {},
+        child: Padding(
+          padding: const EdgeInsets.only(top: 280),
+          child: Text("‘Puspha 2’ suffers a delay, Allu Arjun’s action extravaganza to release on this date",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,
+                  color: Colors.white)),
+        )),
 
-                  ],
-                ),
-              )
-            ],
-          )
-        ],
-      ),
+  ),
+  Container(
+  height: 400,
+  alignment: Alignment.center,
+  decoration:BoxDecoration(
+  image: DecorationImage(image: AssetImage('assets/images/ambani.png'),fit: BoxFit.cover),
+  borderRadius: BorderRadius.circular(8)
+  ),
+    child: TextButton(onPressed: () {},
+        child: Padding(
+          padding: const EdgeInsets.only(top: 300),
+          child: Text("The marathon Indian wedding turning heads around the world",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,
+                  color: Colors.white)),
+        )),
+
+  ),
+  Container(
+  height: 400,
+  alignment: Alignment.center,
+  decoration:BoxDecoration(
+  image: DecorationImage(image: AssetImage('assets/images/Khatron-Ke-Khiladi-12.gif'),fit: BoxFit.cover),
+  borderRadius: BorderRadius.circular(8)
+  ),
+    child: TextButton(onPressed: () {},
+        child: Padding(
+          padding: const EdgeInsets.only(top: 300),
+          child: Text("Fear Factor: Khatron Ke Khiladi 12",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,
+                  color: Colors.white)),
+        )),
+
+  ),
+  ];
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Scaffold(
+  //
+  //     backgroundColor: Colors.white,
+  //
+  //           body: Column(
+  //       children: [SizedBox(height: 10),
+
+    @override
+    Widget build(BuildContext context) {
+    return Scaffold(
+    body: Column(
+      children: [
+        Flexible(
+        child: CardSwiper(
+        cardBuilder:
+        (context, index, percentThresholdX, percentThresholdY) =>
+        cards[index],
+        cardsCount: cards.length,
+        ),
+        ),
+        Row(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+
+              // child: TextButton(onPressed: () {},
+              //     child: Padding(
+              //       padding: const EdgeInsets.only(top: 330),
+              //       child: Text("Indian cricket set for transition after T20 World Cup glory",
+              //           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,
+              //               color: Colors.white)),
+              //     )),
+              //),
+              // )
+            ]
+        ),
+
+        Row(mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Container(
+              child: Padding(padding: const EdgeInsets.symmetric(horizontal: 18),
+                child: Text("Latest News", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),),
+            ),SizedBox(width: 130),
+            Container(
+              child: ElevatedButton(onPressed: () {
+                Navigator.push(context,MaterialPageRoute(builder: (context)=>Firstscreen()));
+              }, child: Text("see more")),
+            )
+          ],
+        ),//SizedBox(height: 3),
+
+
+
+
+        Row( mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              child: Row(
+                children: [
+                  Container(
+                    height: 130,
+                    width: 150,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(image: AssetImage('assets/images/news4.png'),fit: BoxFit.cover),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  Container(
+                    height: 140,
+                    width: 200,
+                    child: TextButton(onPressed: () {
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>News1()));
+                    },
+                        child: Text("Bihar Weather Update: Light Rain, Thandershower \nlikely in Nine Districts During Next 24 Hours; ", style: TextStyle(fontSize: 17, color: Colors.black),)),
+                  )
+
+                ],
+              ),
+            )
+          ],
+        )
+      ],
+    ),
     );
   }
 }

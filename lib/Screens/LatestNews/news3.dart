@@ -18,7 +18,7 @@ class News3 extends StatelessWidget {
                     children: [
                       Expanded(child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
-                        child: Image.asset("assets/images/n3.png",
+                        child: Image.asset("assets/images/j1.png",
                           fit: BoxFit.cover, height: 300,),
                       ),),
                     ],
