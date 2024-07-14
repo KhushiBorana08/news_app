@@ -20,7 +20,7 @@ class splashState extends State<splash> {
     super.initState();
     Timer(Duration(seconds: 1), () async {
       SharedPreferences prefs=await SharedPreferences.getInstance();
-      bool? check=prefs.getBool("isSignup");
+      bool? check=prefs.getBool("islogin");
       if(check!=null){
         if(check) {
           Navigator.pushReplacement(

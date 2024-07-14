@@ -1,39 +1,11 @@
 class Latest {
-  String? message;
-  List<Data>? data;
-
-  Latest({this.message, this.data});
-
-  Latest.fromJson(Map<String, dynamic> json) {
-    message = json['message'];
-    if (json['data'] != null) {
-      data = <Data>[];
-      json['data'].forEach((v) {
-        data!.add(new Data.fromJson(v));
-      });
-    }
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['message'] = this.message;
-    if (this.data != null) {
-      data['data'] = this.data!.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
-}
-
-class Data {
-  String? sId;
   String? status;
   int? totalResults;
   List<Articles>? articles;
 
-  Data({this.sId, this.status, this.totalResults, this.articles});
+  Latest({this.status, this.totalResults, this.articles});
 
-  Data.fromJson(Map<String, dynamic> json) {
-    sId = json['_id'];
+  Latest.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     totalResults = json['totalResults'];
     if (json['articles'] != null) {
@@ -46,7 +18,6 @@ class Data {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['_id'] = this.sId;
     data['status'] = this.status;
     data['totalResults'] = this.totalResults;
     if (this.articles != null) {

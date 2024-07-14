@@ -10,45 +10,42 @@ class NewsPage extends StatefulWidget {
 
 class _NewsPageState extends State<NewsPage> {
   List<Container> cards = [
-
     Container(
       height: 400,
       alignment: Alignment.center,
-     decoration:BoxDecoration(
-       image: DecorationImage(image: AssetImage('assets/images/news7.png'),fit: BoxFit.cover),
-        borderRadius: BorderRadius.circular(8)
-     ),
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/images/news7.png'), fit: BoxFit.cover),
+          borderRadius: BorderRadius.circular(8)),
       child: const Text('1'),
     ),
     Container(
       height: 400,
       alignment: Alignment.center,
-      decoration:BoxDecoration(
-          image: DecorationImage(image: AssetImage('assets/images/anant.png'),fit: BoxFit.cover),
-          borderRadius: BorderRadius.circular(8)
-      ),
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/images/anant.png'), fit: BoxFit.cover),
+          borderRadius: BorderRadius.circular(8)),
       child: const Text('2'),
-
     ),
     Container(
       height: 400,
       alignment: Alignment.center,
-      decoration:BoxDecoration(
-          image: DecorationImage(image: AssetImage('assets/images/pushpa.png'),fit: BoxFit.cover),
-          borderRadius: BorderRadius.circular(8)
-      ),
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/images/pushpa.png'), fit: BoxFit.cover),
+          borderRadius: BorderRadius.circular(8)),
       child: const Text('3'),
-
     ),
     Container(
       height: 400,
       alignment: Alignment.center,
-      decoration:BoxDecoration(
-          image: DecorationImage(image: AssetImage('assets/images/Khatron-Ke-Khiladi-12.gif'),fit: BoxFit.cover),
-          borderRadius: BorderRadius.circular(8)
-      ),
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/images/Khatron-Ke-Khiladi-12.gif'),
+              fit: BoxFit.cover),
+          borderRadius: BorderRadius.circular(8)),
       child: const Text('4'),
-
     )
   ];
   @override

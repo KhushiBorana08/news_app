@@ -47,8 +47,11 @@ class _HomescreenState extends State<Homescreen> with SingleTickerProviderStateM
                   //trailing: Icon(Icons.account_circle_rounded),
                 ),
                 ListTile(
-                  leading: Icon(Icons.favorite),
-                  title: Text('Favorites'),
+                  leading: Icon(Icons.person),
+                  title: TextButton(style: TextButton.styleFrom(fixedSize: const Size(10, 30)),
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Account()));
+                      }, child: Text("Profile")),
                 ),
                 ListTile(
                   leading: Icon(Icons.logout),

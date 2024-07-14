@@ -1,3 +1,4 @@
+
 import 'dart:convert';
 import 'dart:developer';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -37,7 +38,9 @@ class SignInBlocs extends Bloc<SignInEvents,SignInStates>{
       emit(SignInLoadedStates(signInModel: signInModel));
     }
     else{
-      emit(SignInErrorStates(errormsg: response.statusCode.toString()));
+      Map<String,dynamic>responseerror=jsonDecode(response.body);
+      String error=responseerror['message'];
+      emit(SignInErrorStates(errormsg: error));
     }
   }
 }

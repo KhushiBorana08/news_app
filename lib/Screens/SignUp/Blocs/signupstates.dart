@@ -11,4 +11,4 @@ class SignUpLoadedStates extends SignUpStates{
 class SignUpErrorStates extends SignUpStates{
   String errormsg;
   SignUpErrorStates({required this.errormsg});
-}
+  }

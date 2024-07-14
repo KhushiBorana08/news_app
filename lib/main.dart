@@ -1,12 +1,17 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/Screens/Home/homescreen.dart';
+import 'package:news_app/Screens/LatestNews/Cubits/newscubit.dart';
 import 'package:news_app/Screens/LatestNews/latestnews.dart';
 import 'package:news_app/Screens/LatestNews/news1.dart';
+import 'package:news_app/Screens/SignIn/Blocs/signinblocs.dart';
+import 'package:news_app/Screens/SignUp/Blocs/signupbloc.dart';
 import 'package:news_app/Screens/Splash/Controllers/splashcontroller.dart';
 import 'package:news_app/Screens/Splash/splashscreen.dart';
 import 'package:news_app/firebase_options.dart';
 
+import 'Screens/LatestNews/newsfetch.dart';
 import 'Screens/newspage.dart';
 
 void main() async {
@@ -21,16 +26,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF0D47A1)),
-        useMaterial3: true,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => Newscubit()..getnews()),
+        BlocProvider(create: (_) => SignInBlocs()),
+        BlocProvider(create: (_) => SignUpBloc())
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF0D47A1)),
+          useMaterial3: true,
+        ),
+        //home: const MyHomePage(title: 'Flutter Demo Home Page'),
+        //home: Homescreen(),
+        home: splash(),
+        debugShowCheckedModeBanner: false,
       ),
-      //home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      //home: Homescreen(),
-      home: splash(),
-      debugShowCheckedModeBanner: false,
     );
   }
 }
