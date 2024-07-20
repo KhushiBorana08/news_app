@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app/Screens/Home/UserDetail/userpage.dart';
 import 'package:news_app/Screens/Home/account.dart';
 import 'package:news_app/Screens/Home/screenfour.dart';
 import 'package:news_app/Screens/Home/screenone.dart';
@@ -50,7 +51,7 @@ class _HomescreenState extends State<Homescreen> with SingleTickerProviderStateM
                   leading: Icon(Icons.person),
                   title: TextButton(style: TextButton.styleFrom(fixedSize: const Size(10, 30)),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Account()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Userpage()));
                       }, child: Text("Profile")),
                 ),
                 ListTile(

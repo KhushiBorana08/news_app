@@ -116,7 +116,8 @@ class _ScreenoneState extends State<Screenone> {
           return Center(
             child: CircularProgressIndicator(),
           );
-        } else if (state is NewsLoadedStates) {
+        }
+        else if (state is NewsLoadedStates) {
           return Expanded(
             child: ListView.builder(
                 itemBuilder: (context, index) {

@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => Newscubit()..getnews()),
         BlocProvider(create: (_) => SignInBlocs()),
         BlocProvider(create: (_) => SignUpBloc())
+
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

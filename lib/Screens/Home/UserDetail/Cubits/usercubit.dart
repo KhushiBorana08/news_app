@@ -3,28 +3,27 @@ import 'dart:developer';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
-import 'package:news_app/Screens/LatestNews/Cubits/newsstates.dart';
-import 'package:news_app/Screens/LatestNews/models/newsmodel.dart';
-import 'package:news_app/Utils/baseurls.dart';
+import 'package:news_app/Screens/Home/UserDetail/Cubits/userstates.dart';
+import 'package:news_app/Screens/Home/UserDetail/Model/usermodel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class Newscubit extends Cubit<NewsStates> {
-  Newscubit() : super(NewsInitialStates());
-  getnews() async {
-    emit(NewsLoadingStates());
+class UserCubit extends Cubit<UserStates>{
+  UserCubit() : super(UserIntialState());
+  getnews() async{
+    emit(UserLoadingStates());
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? token = prefs.getString("token");
     String? userid = prefs.getString("userid");
     log(token.toString());
     final response = await http.post(Uri.parse("https://newsapi.org/v2/everything?q=tesla&from=2024-06-14&sortBy=publishedAt&apiKey=3d895a35ddd34ce9adb1a74d9299ebc3"),
-        headers: {"Content-Type": 'application/json', "Authorization": token!},
+      headers: {"Content-type": 'application/json', "Authorization": token!},
         body: jsonEncode({"userid":userid}));
     if (response.statusCode == 200) {
       Map<String, dynamic> responsedata = jsonDecode(response.body);
-      Latest latest = Latest.fromJson(responsedata);
-      emit(NewsLoadedStates(latest: latest));
+      Userpage userpage = Userpage.fromJson(responsedata);
+      emit(UserLoadedStates(userpage: userpage));
     } else {
-      emit(NewsErrorStates(error: response.statusCode.toString()));
+      emit(UserErrorStates(error: response.statusCode.toString()));
     }
   }
 }
