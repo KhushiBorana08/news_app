@@ -124,7 +124,7 @@ class _ScreenoneState extends State<Screenone> {
                   return Column(
                     children: [
                       Flexible(
-                        child: CardSwiper(
+                         child: CardSwiper(
                           cardBuilder: (context, index, percentThresholdX,
                                   percentThresholdY) =>
                               cards[index],
