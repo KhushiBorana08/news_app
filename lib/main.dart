@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_app/Screens/Home/UserDetail/Cubits/usercubit.dart';
+import 'package:news_app/Screens/Home/UserDetail/userpage.dart';
 import 'package:news_app/Screens/LatestNews/Cubits/newscubit.dart';
 import 'package:news_app/Screens/LatestNews/latestnews.dart';
 import 'package:news_app/Screens/LatestNews/news1.dart';
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => Newscubit()..getnews()),
         BlocProvider(create: (_) => SignInBlocs()),
         BlocProvider(create: (_) => SignUpBloc()),
-        //BlocProvider(create: (_) => Userpage()..getnews())
+        BlocProvider(create: (_) => UserCubit()..getnews())
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
@@ -41,7 +43,8 @@ class MyApp extends StatelessWidget {
         //home: const MyHomePage(title: 'Flutter Demo Home Page'),
         //home: Homescreen(),
         //home: splash(),
-        home: Firstscreen(),
+        //home: Firstscreen(),
+        home: Userpage(),
         debugShowCheckedModeBanner: false,
       ),
     );

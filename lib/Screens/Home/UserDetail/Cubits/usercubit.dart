@@ -15,7 +15,7 @@ class UserCubit extends Cubit<UserStates>{
     String? token = prefs.getString("token");
     String? userid = prefs.getString("userid");
     log(token.toString());
-    final response = await http.post(Uri.parse("https://newsapi.org/v2/everything?q=tesla&from=2024-06-14&sortBy=publishedAt&apiKey=3d895a35ddd34ce9adb1a74d9299ebc3"),
+    final response = await http.post(Uri.parse("https://news-api-delta-lyart.vercel.app/newsapp/userdetails"),
       headers: {"Content-type": 'application/json', "Authorization": token!},
         body: jsonEncode({"userid":userid}));
     if (response.statusCode == 200) {
